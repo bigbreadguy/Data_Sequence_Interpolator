@@ -30,7 +30,7 @@ if __name__ == "__main__":
     data_dir = os.path.join(cwd, "data", "*")
     path_list = load_dir(data_dir)
 
-    print(f"Data Loaded from {os.path.join(cwd, "data")}")
+    print(f"Data Loaded from {os.path.join(cwd, 'data')}")
     target_files = [os.path.basename(d) for d in path_list]
     for tf in target_files:
         print(f"{tf} Loaded!")
