@@ -1,10 +1,7 @@
 import numpy as np
 import pandas as pd
-import os
 import glob
 from functools import reduce
-
-load_dir = lambda file_pattern : glob.glob(file_pattern)
 
 def load_df(path : str):
     ext = path.split(".")[-1]
