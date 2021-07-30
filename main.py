@@ -9,7 +9,7 @@ class opts():
         self.parser = argparse.ArgumentParser(description="Interpolator",
                                                 formatter_class=argparse.ArgumentDefaultsHelpFormatter)
         
-        self.parser.add_argument("-T", "--has_timestamp", default=False, choices=[True, False], type=bool, dest="has_ts")
+        self.parser.add_argument("-T", "--has_timestamp", default=True, choices=[True, False], type=bool, dest="has_ts")
         self.parser.add_argument("--ts_first", default=True, choices=[True, False], type=bool, dest="ts_first")
         self.parser.add_argument("--align_max", default=True, choices=[True, False], type=bool, dest="align_max")
         self.parser.add_argument("-L", "--align_length", default=1000, type=int, dest="align_length")
