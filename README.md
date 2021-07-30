@@ -17,7 +17,10 @@ pip install -r requirements.txt
 
 ### 3. run
 ```
-python main.py [-T, --has_timestamp BOOL(default=True){True, False}] [--ts_first BOOL(default=True){True, False}] [--align_max BOOL(default=True){True, False}] [-L, --align_length INT(default=1000)]
+python main.py [-T, --has_timestamp BOOL(default=True){True, False}]
+               [--ts_first BOOL(default=True){True, False}]
+               [--align_max BOOL(default=True){True, False}]
+               [-L, --align_length INT(default=1000)]
 ```
 
 **has_timestamp** True when time stamps are provides with the sequences.</br>
