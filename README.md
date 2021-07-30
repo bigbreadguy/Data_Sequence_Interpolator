@@ -1,4 +1,4 @@
-# Data Sequence Intepolator
+# Data Sequence Interpolator
 
 ## Introduction
   <b>Data Sequence Interpolator</b> takes discrete data sequences with different intervals(that can be converted into a Pandas DataFrame) and returns it back as aligned data. All the sequences would be interpolated into target intervals, and the target interval will be provided as very last column of the data table.
