@@ -38,7 +38,7 @@ def interpolate(sequence, cols, align_max:bool=True, ts_name:str="Time[s]", alig
     if align_max:
         align_length = len(max_xs)
         
-    target_xs = np.linspace(np.min(max_xs), np.max(max_xs), num=align_length)
+    target_xs = np.linspace(np.min(sequence[0]), np.max(sequence[0]), num=align_length)
     result = {key:np.interp(target_xs, sequence[0][i], sequence[1][i]) for i, key in enumerate(cols)}
     result[ts_name] = target_xs
     res_df = pd.DataFrame(data=result)
