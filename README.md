@@ -21,9 +21,11 @@ python main.py [-T, --has_timestamp BOOL(default=True){True, False}]
                [--ts_first BOOL(default=True){True, False}]
                [--align_max BOOL(default=True){True, False}]
                [-L, --align_length INT(default=1000)]
+               [-N, --ts_name STR(default="Time[s]")]
 ```
 
   **has_timestamp** True when time stamps are provides with the sequences.</br>
   **ts_first** True when a time stamp comes first in given data frames.</br>
   **align_max** True if you want to align sequences following the longest time stamps</br>
   **align_length** required when align_max is False, defines the length of target time stamp.</br>
+  **ts_name** defines a column name for the target time stamp.</br>
