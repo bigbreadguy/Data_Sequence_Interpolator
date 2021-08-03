@@ -13,6 +13,7 @@ class opts():
         self.parser.add_argument("--ts_first", default=True, choices=[True, False], type=bool, dest="ts_first")
         self.parser.add_argument("--align_max", default=True, choices=[True, False], type=bool, dest="align_max")
         self.parser.add_argument("-L", "--align_length", default=1000, type=int, dest="align_length")
+        self.parser.add_argument("-N", "--ts_name", default="Time[s]", type=str, dest="ts_name")
 
     def parse(self, args : str = None):
         if args == None:
@@ -44,6 +45,7 @@ if __name__ == "__main__":
             ts_start = 1
     align_max = args.align_max
     align_length = args.align_length
+    ts_name = args.ts_name
 
     result_dir = os.path.join(cwd, "result")
     if not os.path.exists(result_dir):
@@ -59,7 +61,7 @@ if __name__ == "__main__":
         
         sequence = split_df(df, has_ts=has_ts, ts_start=ts_start)
 
-        result = interpolate(sequence, cols)
+        result = interpolate(sequence, cols, ts_name=ts_name, align_max=align_max, align_length=align_length)
         basename = os.path.basename(path)
         save_dir = os.path.join(result_dir, basename)
 
