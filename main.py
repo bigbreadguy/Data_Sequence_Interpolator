@@ -57,7 +57,7 @@ if __name__ == "__main__":
         else:
             cols = list(df)
         
-        sequence = split_df(df)
+        sequence = split_df(df, has_ts=has_ts, ts_start=ts_start)
 
         result = interpolate(sequence, cols)
         basename = os.path.basename(path)

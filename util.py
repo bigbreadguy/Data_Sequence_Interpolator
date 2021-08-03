@@ -10,6 +10,8 @@ def load_df(path : str):
             df = pd.read_csv(path)
         elif ext == "xlsx":
             df = pd.read_excel(path, engine="openpyxl")
+        if "Unnamed: 0" in df:
+            df.drop("Unnamed: 0", axis=1, inplace=True)
         return df
     except:
         print("File format not supported!")
@@ -41,6 +43,7 @@ def interpolate(sequence, cols, align_max:bool=True, ts_name:str="Time[s]", alig
     max_val = reduce(lambda a, b : np.max(a) if np.max(a) > np.max(b) else np.max(b), sequence[0])
     min_val = reduce(lambda a, b : np.min(a) if np.min(a) < np.min(b) else np.min(b), sequence[0])
     target_xs = np.linspace(min_val, max_val, num=align_length)
+    print(f"\ntarget timestamp : length {align_length}/ min {min_val}/ max {max_val}")
     result = {key:np.interp(target_xs, sequence[0][i], sequence[1][i]) for i, key in enumerate(cols)}
     result[ts_name] = target_xs
     res_df = pd.DataFrame(data=result)
